@@ -133,10 +133,8 @@ class HighLevel(MLClassifierBase):
         min_degree = np.zeros(self.n_labels)
         max_degree = np.zeros(self.n_labels)
         for label in range(self.n_labels):
-            metrics[0][label] = ig.Graph.assortativity_degree(
-                self.graphs[label])
-            metrics[1][label] = ig.Graph.transitivity_avglocal_undirected(
-                self.graphs[label])
+            metrics[0][label] = ig.Graph.assortativity_degree(self.graphs[label])
+            metrics[1][label] = ig.Graph.transitivity_avglocal_undirected(self.graphs[label])
             degree = self.graphs[label].degree()
             min_degree[label] = np.min(degree)
             max_degree[label] = np.max(degree)
@@ -183,8 +181,7 @@ class HighLevel(MLClassifierBase):
             scipy.sparse: the probabilities
         """
         neighbors = np.argsort(euclidean_distances(X, self.X))[:, :self.k]
-        results = scipy.sparse.lil_matrix(
-            (X.shape[0], self.n_labels), dtype='float')
+        results = scipy.sparse.lil_matrix((X.shape[0], self.n_labels), dtype='float')
         self.tc_proba = self.classifier.fit(self.X, self.y).predict_proba(X)
 
 
