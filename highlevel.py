@@ -28,14 +28,14 @@ class HighLevel(MLClassifierBase):
     References:
         If you use this classifier please cite the original paper introducing the method:
         .. code :: bibtex
-            @inproceedings{resende2020high,
-                title={High-Level Classification for Multi-Label Learning},
-                author={Resende, Vin{\'\i}cius H and Carneiro, Murillo G},
-                booktitle={2020 International Joint Conference on Neural Networks (IJCNN)},
-                pages={1--8},
-                year={2020},
-                organization={IEEE}
-            }
+          @inproceedings{resende2019towards,
+              title={Towards a high-level multi-label classification from complex networks},
+              author={Resende, Vinicius H and Carneiro, Murillo G},
+              booktitle={2019 IEEE 31st international conference on tools with artificial intelligence (ICTAI)},
+              pages={1140--1147},
+              year={2019},
+              organization={IEEE}
+}
     """
 
     def __init__(self, k=3, e=0, weight_l=0.3, weight_d=[0.33, 0.33, 0.33], threshold=0.7,
